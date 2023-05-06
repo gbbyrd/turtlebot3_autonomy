@@ -80,7 +80,7 @@ The line following algorithm uses blob detection and masking. First, the hsv par
 
 To perform the wall following and obstacle avoidance, launch your gazebo world and navigate to the src directory of the turtlebot3_autonomy package. You can teleop the turtlebot to the line following portion of the world using `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`. Run `python3 line_follower_gazebo.py` to follow the line.
 
-![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/main/ref/videos/wall_following.gif)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/ref/line_following.gif)
 
 ## Stop Sign Detection
 
@@ -88,7 +88,7 @@ The stop sign detection uses a PyTorch implementation of Yolov5. For more inform
 
 To perform the stop sign detection, launch your gazebo world and navigate to the src directory of the turtlebot3_autonomy package. You can teleop the turtlebot to the stop sign using `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`. Run `python3 detect_sign_gazebo.py` to begin detecting stop signs. You can telop your Turtlebot around and see that it will detect the stop signs.
 
-![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/ref/stop_sign_detection.gif)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/ref/stop_sign_detec.gif)
 
 ## Full Gazebo Stack
 To run the full stack that can autnomously navigate the gazebo world, launch your gazebo world, navigate to the src directory of the turtlebot3_autonomy package and run the following command.
@@ -97,12 +97,12 @@ To run the full stack that can autnomously navigate the gazebo world, launch you
 python3 final_gazebo.py
 ```
 
-![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/ref/videos/full_vid.gif)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/ref/full_vid.gif)
 
 ## Real World
 The algorithmns for the real world implementation are the same as those used in the simulation with some minor differences in the topics that are used for the subscribers. These algorithms are meant to be modified and explored to understand the difficulties associated with going from simulation to the real world. Here is an example of the wall following and obstacle avoidance working on a real Turtlebot.
 
-![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/main/ref/real_world_obstacle_avoidance.gif)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/ref/real_world_obstacle_avoidance.gif)
 
 Maintainers:
 

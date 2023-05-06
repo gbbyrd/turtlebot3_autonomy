@@ -46,7 +46,7 @@ You should now have a built catkin workspace complete will all of the launch fil
 # World Overview
 The simulation world is broken up into 4 different sections each requiring different algorithms to navigate. These algorithms will rely on camera and LiDAR sensors to navigate. These 4 navigation tasks are some of the most common tasks for real world autonomy, so real world environments could be easily built to test out the real world algorithms.
 
-![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/master/catkin_ws/src/turtlebot3_autonomy/ref/sim_world_overview.png?raw=true)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/catkin_ws/src/turtlebot3_autonomy/ref/sim_world_overview.png?raw=true)
 
 # Algorithms Explained
 
@@ -66,21 +66,21 @@ The wall following and obstacle avoidance functionality of the robot use the sam
 
 If the turtlebot detects more LiDAR points closer to it in one section, it will turn away from that section.
 
-![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/master/catkin_ws/src/turtlebot3_autonomy/ref/obstacle_avoidance.png?raw=true)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/catkin_ws/src/turtlebot3_autonomy/ref/obstacle_avoidance.png?raw=true)
 
 To perform the wall following and obstacle avoidance, launch your gazebo world and navigate to the src directory of the turtlebot3_autonomy package. Run `python3 obstacle_avoidance_gazebo.py`.
 
-![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/master/catkin_ws/src/turtlebot3_autonomy/src/ref/obstacle_avoidance.gif)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/catkin_ws/src/turtlebot3_autonomy/src/ref/obstacle_avoidance.gif)
 
 ## Line Following
 
 The line following algorithm uses blob detection and masking. First, the hsv parameters must be tuned to get a binary image of the camera feed where the line is represented in white (1s) and the rest of the image is represented in black (0s). To get the min and max hsv values, take a picture of whatever line you are trying to follow and change the file location to that picture in the hsv_tuner.py file. Run the file to tune your picture. Once the hsv parameters are tuned, a binary image of the camera feed can be created. The binary image is then masked by cropping out all but the very bottom of the image (the part of the line closest to the turtlebot). The centroid of the binary image is then calculated, which corresponds to the center of the line. The error for the PID controller is the distance between this centroid and the center of the image.
 
-![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/master/catkin_ws/src/turtlebot3_autonomy/ref/binary_image.png?raw=true)
+![alt text](https://github.com/gbbyrd/turtlebot3_autonomy/blob/main/catkin_ws/src/turtlebot3_autonomy/ref/binary_image.png?raw=true)
 
 To perform the wall following and obstacle avoidance, launch your gazebo world and navigate to the src directory of the turtlebot3_autonomy package. You can teleop the turtlebot to the line following portion of the world using `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`. Run `python3 line_follower_gazebo.py` to follow the line.
 
-![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/master/catkin_ws/src/auefinals/src/videos/wall_following.gif)
+![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/main/catkin_ws/src/auefinals/src/videos/wall_following.gif)
 
 ## Stop Sign Detection
 
@@ -88,7 +88,7 @@ The stop sign detection uses a PyTorch implementation of Yolov5. For more inform
 
 To perform the stop sign detection, launch your gazebo world and navigate to the src directory of the turtlebot3_autonomy package. You can teleop the turtlebot to the stop sign using `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`. Run `python3 detect_sign_gazebo.py` to begin detecting stop signs. You can telop your Turtlebot around and see that it will detect the stop signs.
 
-![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/master/catkin_ws/src/auefinals/src/videos/stop_sign_detection.gif)
+![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/main/catkin_ws/src/auefinals/src/videos/stop_sign_detection.gif)
 
 ## Full Gazebo Stack
 To run the full stack that can autnomously navigate the gazebo world, launch your gazebo world, navigate to the src directory of the turtlebot3_autonomy package and run the following command.
@@ -97,12 +97,12 @@ To run the full stack that can autnomously navigate the gazebo world, launch you
 python3 final_gazebo.py
 ```
 
-![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/master/catkin_ws/src/auefinals/src/videos/full_vid.gif)
+![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/main/catkin_ws/src/auefinals/src/videos/full_vid.gif)
 
 ## Real World
 The algorithmns for the real world implementation are the same as those used in the simulation with some minor differences in the topics that are used for the subscribers. These algorithms are meant to be modified and explored to understand the difficulties associated with going from simulation to the real world. Here is an example of the wall following and obstacle avoidance working on a real Turtlebot.
 
-![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/master/catkin_ws/src/auefinals/src/videos/real_world_obstacle_avoidance.gif)
+![alt text](https://github.com/gbbyrd/Aue823_Spring22_Team1/blob/main/catkin_ws/src/auefinals/src/videos/real_world_obstacle_avoidance.gif)
 
 Maintainers:
 
